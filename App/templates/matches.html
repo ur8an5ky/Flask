@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block style %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/matches.css')}}" />
+{% endblock %}
+{% block title %}
+    Matches Page
+{% endblock %}
+{% block content %}
+    <p></p>
+    <table class="table table-hover" style="background-color: #edeee4;">
+        <thead>
+            <tr style="background-color: #edeee4;">
+                <!-- Your Columns HERE -->
+                <th scope="col">Match ID</th>
+                <th scope="col">Group</th>
+                <th scope="col">Team 1</th>
+                <th scope="col">Score</th>
+                <th scope="col">Team 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Your rows inside the table HERE: -->
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.group }}</td>
+                    <td>{{ item.team1 }}</td>
+                    {% if item.team1_score and item.team2_score %}
+                        <td>{{ item.team1_score }} : {{ item.team2_score }}</td>
+                    {% else %}
+                        <td>__ : __</td>
+                    {% endif %}
+                    <td>{{ item.team2 }}</td>
+                    <!-- <td> -->
+                        <!----><!-- <button class="btn btn-outline btn-info">History</button> -->
+                        <!-- <button class="btn btn-outline" style="color: white;background-color: #761b34;">See more</button> -->
+                    <!-- </td> -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+{% block actions %}
+{% endblock %}

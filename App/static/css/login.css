@@ -1,0 +1,13 @@
+.btn{
+    color: white;
+}
+.btn:hover {
+    color: #4b4bf1;
+    background-color: #edeee4;
+    border: 1px solid #4b4bf1;
+}
+.btn:active{
+    background-color: #4b4bf1;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}

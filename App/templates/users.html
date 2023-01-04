@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block style %}
+{% endblock %}
+{% block title %}
+    Users Page
+{% endblock %}
+{% block content %}
+    <p></p>
+    <table class="table table-hover" style="background-color: #edeee4;">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Userame</th>
+                <th scope="col">Email</th>
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.username }}</td>
+                    <td>{{ item.email }}</td>
+                    <td>
+                        <!-- <button class="btn btn-outline btn-info">History</button> -->
+                        <button class="btn btn-outline" style="color: white;background-color: #761b34;">See more</button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+{% block actions %}
+{% endblock %}

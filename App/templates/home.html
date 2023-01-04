@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block style %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}" />
+{% endblock %}
+{% block title %}
+    Home Page
+{% endblock %}
+{% block content %}
+    <img src="{{url_for('static', filename='images/groups.png')}}" alt="FIFA WC 2022 GROUPS" style="width: 66%;">
+{% endblock %}
+{% block actions %}
+{% endblock %}

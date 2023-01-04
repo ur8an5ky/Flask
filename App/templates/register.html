@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block style %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/register.css')}}" />
+{% endblock %}
+{% block title %}
+    Registration Page
+{% endblock %}
+{% block content %}
+    <p></p>
+    <div class="container">
+        <form method="POST" class="form-register" style="color: #edeee4; font-weight: bold;" novalidate>
+            {{ form.hidden_tag() }}
+            <h1 class="h3 mb-3 font-weight-normal" style="color: white;">
+                Please Create your Account
+            </h1>
+            <br>
+            {{ form.username.label() }}:<p></p>
+            {{ form.username(class="form-control", placeholder="Username", style="text-align: center;") }}<p></p>
+            {{ form.email_address.label() }}:<p></p>
+            {{ form.email_address(class="form-control", placeholder="Email", style="text-align: center;") }}<p></p> <!-- ############ pamietaj ze jakies 'imie@o' nie wywala tego bledu z okenkiem -->  
+            {{ form.password.label() }}:<p></p>
+            {{ form.password(class="form-control", placeholder="Password", style="text-align: center;") }}<p></p>
+            {{ form.password_confirm.label() }}:<p></p>
+            {{ form.password_confirm(class="form-control", placeholder="Confirm password", style="text-align: center;") }}
+            <br>
+            <div class="checkbox mb-3">
+                <h6>Do you have an account?</h6>
+                <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Login</a>
+            </div>
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+        </form>
+    </div>
+{% endblock %}
+{% block actions %}
+{% endblock %}
